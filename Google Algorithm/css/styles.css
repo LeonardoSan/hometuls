@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-align: center;
+}
+
+#input,
+#search,
+#result {
+	width: 75%;
+	text-align: center;
+	display: block;
+}
+
+#input {
+	margin: 30px auto 10px;
+	height: 40px;
+}
+
+#search {
+	margin: 0 auto 20px;
+}
+
+#result {
+	margin: 0 auto 20px;
+	background-color: lightblue;
+	padding: 20px;
+	display: none
+}
+
+span {
+	color: #FFF;
+}
