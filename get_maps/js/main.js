@@ -5,13 +5,21 @@ script.src = 'https://maps.google.com/maps/api/js?key=' + googleMapsKey;
 document.getElementsByTagName('body')[0].appendChild(script);
 
 $(window).on('load', function () {
-	var api = [{ "id": "0248b9d0-d443-498b-b073-9a08b8f85050", "categoryA": "M", "categoryB": "M2", "comments": null, "politicA": null, "politicB": null, "politicC": null, "anonymus": true, "name": null, "email": null, "phone": null, "code_state": "16", "code_city": "1", "gender": null, "ipAddress": "434.34.34.34", "ipInfo": null, "date": 1549049707000, "image": null, "staName": "BOGOTA D.C.", "citName": "BOGOTA. D.C.", "citId": null, "latitude": 4.710989, "longitude": -74.072092, "countItems": 0 }, { "id": "1248b9d0-d443-498b-b073-9a08b8f85050", "categoryA": "M", "categoryB": "M2", "comments": null, "politicA": null, "politicB": null, "politicC": null, "anonymus": true, "name": null, "email": null, "phone": null, "code_state": "16", "code_city": "1", "gender": null, "ipAddress": "434.34.34.34", "ipInfo": null, "date": 1549049707000, "image": null, "staName": "BOGOTA D.C.", "citName": "BOGOTA. D.C.", "citId": null, "latitude": 4.710989, "longitude": -74.072092, "countItems": 0 }];
+	($.ajax({
+		url: 'http://34.201.19.114:40003/recordController/getAllRecords',
+		dataType: 'json',
+		type: 'GET',
+		success: function(data){
+			console.log(data);
 
-	console.log('api', api);
-
-	for (var i = 0; i < api.length; i++) {
-		initMap(api[i].latitude, api[i].longitude, api[i].id, api[i].staName);
-	}
+			for (var i = 0; i < data.length; i++) {
+				initMap(data[i].latitude, data[i].longitude, data[i].id, data[i].citName);
+			}
+		},
+		error: function(error){
+			console.error(error);
+		}
+	}));
 });
 
 function initMap(latitude, longitude, id, title) {

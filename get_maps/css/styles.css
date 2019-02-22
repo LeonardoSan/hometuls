@@ -5,10 +5,11 @@ h4 {
 
 h4 {
 	margin-bottom: 5px;
+	margin-top: 50px;
 }
 
 .map {
-	width: 400px;
-	height: 400px;
+	width: 600px;
+	height: 300px;
 	margin: 0 auto 10px;
 }
