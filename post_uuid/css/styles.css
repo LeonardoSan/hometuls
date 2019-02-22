@@ -2,14 +2,14 @@ h1 {
 	text-align: center;
 }
 
-#post, #result {
+#post, #result-uuid, #result-check, #check, #uuid {
 	width: 75%;
 	text-align: center;
 	display: block;
 	margin: 20px auto;
 }
 
-#result{
+#result-uuid, #result-check{
 	background-color: #5DADE2;
 	padding: 20px;
 	display: none;
@@ -17,4 +17,10 @@ h1 {
 
 span{
 	color: #FFF;
+}
+
+p{
+	width: 90%;
+	margin: auto;
+	word-break: break-all;
 }
